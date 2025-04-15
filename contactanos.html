@@ -1,5 +1,5 @@
 <div id="main-content"
-    style=" margin-top: 10px; display:flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #00DBF7, #6E4CFA); padding: 2rem;">
+    style="margin-top: 10px; display:flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #00DBF7, #6E4CFA); padding: 2rem;">
     <div
         style="margin-top: 10px; background-color: #5161ce; background: url('assets/right.jpeg') no-repeat center/cover; display: flex; justify-content: center;">
         <div style="
@@ -17,23 +17,44 @@
             <h1 style="color: #F4F4F4; text-align: center; margin-bottom: 1.5rem;">Contáctanos</h1>
             <p style="text-align: center; color: #F4F4F4; margin-bottom: 2rem;">Completa el formulario o escríbenos a <a
                     href="mailto:contacto@giftclick.com" style="color: #FF7864;">giftclick.bo@gmail.com</a></p>
-            <form>
+            
+            <!-- Mensaje de éxito oculto inicialmente -->
+            <div id="success-message" style="display: none; background-color: rgba(76, 175, 80, 0.8); color: white; padding: 10px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
+                Tu mensaje ha sido enviado exitosamente. ¡Gracias por contactarnos!
+            </div>
+            
+            <!-- Mensaje de error oculto inicialmente -->
+            <div id="error-message" style="display: none; background-color: rgba(244, 67, 54, 0.8); color: white; padding: 10px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
+                Ha ocurrido un error al enviar el formulario. Por favor intenta nuevamente.
+            </div>
+            
+            <!-- Usando FormSubmit para enviar sin backend -->
+            <form action="https://formsubmit.co/7348831400067471503ac9b234783b94" method="POST" id="contact-form">
+                <!-- Campo oculto anti-spam -->
+                <input type="text" name="_honey" style="display: none">
+                
+                <!-- Evita la página de gracias de formsubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <!-- URL a la que redirigir después del envío -->
+                <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
+                
                 <div class="form-group" style="margin-bottom: 1.2rem;">
                     <label for="nombre" style="display: block; margin-bottom: 0.5rem; color: white;">Nombre:</label>
-                    <input type="text" id="nombre" class="form-control"
+                    <input type="text" name="nombre" id="nombre" class="form-control" required
                         style="width: 100%; padding: 0.7rem; border-radius: 10px; border: none; background: rgba(244,244,244,0.8); color: #231F1C;">
                 </div>
                 <div class="form-group" style="margin-bottom: 1.2rem;">
                     <label for="correo" style="display: block; margin-bottom: 0.5rem; color: white;">Correo:</label>
-                    <input type="email" id="correo" class="form-control"
+                    <input type="email" name="email" id="correo" class="form-control" required
                         style="width: 100%; padding: 0.7rem; border-radius: 10px; border: none; background: rgba(244,244,244,0.8); color: #231F1C;">
                 </div>
                 <div class="form-group" style="margin-bottom: 1.5rem;">
                     <label for="mensaje" style="display: block; margin-bottom: 0.5rem; color: white;">Mensaje:</label>
-                    <textarea id="mensaje" class="form-control" rows="4"
+                    <textarea name="mensaje" id="mensaje" class="form-control" rows="4" required
                         style="width: 100%; padding: 0.7rem; border-radius: 10px; border: none; background: rgba(244,244,244,0.8); color: #231F1C;"></textarea>
                 </div>
-                <button type="submit" class="btn" style="
+                <button type="submit" id="submit-btn" class="btn" style="
                 background: linear-gradient(to right, #13E2C6, #FF7864);
                 border: none;
                 color: white;
@@ -49,5 +70,37 @@
             </form>
         </div>
     </div>
-
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    
+    // Agregar evento para mostrar "Enviando..." al hacer submit
+    form.addEventListener('submit', function(event) {
+        // No prevenir el envío predeterminado, ya que ahora queremos que se envíe
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+        
+        // Si estás probando localmente, puedes prevenir el envío para simular:
+        if (window.location.protocol === 'file:') {
+            event.preventDefault();
+            
+            // Simulación solo para pruebas locales
+            setTimeout(function() {
+                successMessage.style.display = 'block';
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar';
+                
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        }
+    });
+});
+</script>
