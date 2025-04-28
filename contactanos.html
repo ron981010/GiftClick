@@ -14,31 +14,48 @@
         border: 1px solid rgba(255, 255, 255, 0.18);
         margin-block: 100px;
     ">
+            <a href="https://wa.me/+51967707229" target="_blank" style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 1rem 2rem;
+                background-color: #6e4cfa;
+                border-radius: 30px;
+                color: #ffffff;
+                font-weight: bold;
+                text-decoration: none;
+                backdrop-filter: blur(5px);
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            " onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='rgba(255,255,255,0.3)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='rgba(255,255,255,0.2)'">
+                Contactanos por Whatsapp
+            </a>
             <h1 style="color: #F4F4F4; text-align: center; margin-bottom: 1.5rem;">Contáctanos</h1>
             <p style="text-align: center; color: #F4F4F4; margin-bottom: 2rem;">Completa el formulario o escríbenos a <a
                     href="mailto:contacto@giftclick.com" style="color: #FF7864;">giftclick.bo@gmail.com</a></p>
-            
+
             <!-- Mensaje de éxito oculto inicialmente -->
-            <div id="success-message" style="display: none; background-color: rgba(76, 175, 80, 0.8); color: white; padding: 10px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
+            <div id="success-message"
+                style="display: none; background-color: rgba(76, 175, 80, 0.8); color: white; padding: 10px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
                 Tu mensaje ha sido enviado exitosamente. ¡Gracias por contactarnos!
             </div>
-            
+
             <!-- Mensaje de error oculto inicialmente -->
-            <div id="error-message" style="display: none; background-color: rgba(244, 67, 54, 0.8); color: white; padding: 10px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
+            <div id="error-message"
+                style="display: none; background-color: rgba(244, 67, 54, 0.8); color: white; padding: 10px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
                 Ha ocurrido un error al enviar el formulario. Por favor intenta nuevamente.
             </div>
-            
+
             <!-- Usando FormSubmit para enviar sin backend -->
             <form action="https://formsubmit.co/7348831400067471503ac9b234783b94" method="POST" id="contact-form">
                 <!-- Campo oculto anti-spam -->
                 <input type="text" name="_honey" style="display: none">
-                
+
                 <!-- Evita la página de gracias de formsubmit -->
                 <input type="hidden" name="_captcha" value="false">
-                
+
                 <!-- URL a la que redirigir después del envío -->
                 <input type="hidden" name="_next" value="https://ron981010.github.io/GiftClick/gracias.html">
-                
+
                 <div class="form-group" style="margin-bottom: 1.2rem;">
                     <label for="nombre" style="display: block; margin-bottom: 0.5rem; color: white;">Nombre:</label>
                     <input type="text" name="nombre" id="nombre" class="form-control" required
@@ -73,34 +90,34 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const successMessage = document.getElementById('success-message');
-    const errorMessage = document.getElementById('error-message');
-    
-    // Agregar evento para mostrar "Enviando..." al hacer submit
-    form.addEventListener('submit', function(event) {
-        // No prevenir el envío predeterminado, ya que ahora queremos que se envíe
-        submitBtn.textContent = 'Enviando...';
-        submitBtn.disabled = true;
-        
-        // Si estás probando localmente, puedes prevenir el envío para simular:
-        if (window.location.protocol === 'file:') {
-            event.preventDefault();
-            
-            // Simulación solo para pruebas locales
-            setTimeout(function() {
-                successMessage.style.display = 'block';
-                form.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar';
-                
-                setTimeout(function() {
-                    successMessage.style.display = 'none';
-                }, 5000);
-            }, 1500);
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+
+        // Agregar evento para mostrar "Enviando..." al hacer submit
+        form.addEventListener('submit', function (event) {
+            // No prevenir el envío predeterminado, ya que ahora queremos que se envíe
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
+            // Si estás probando localmente, puedes prevenir el envío para simular:
+            if (window.location.protocol === 'file:') {
+                event.preventDefault();
+
+                // Simulación solo para pruebas locales
+                setTimeout(function () {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Enviar';
+
+                    setTimeout(function () {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }, 1500);
+            }
+        });
     });
-});
 </script>
