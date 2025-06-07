@@ -132,9 +132,20 @@ function loadPage(page) {
             $('.nav-item').removeClass('active');
             $('.nav-link[href="#' + page + '"]').parent().addClass('active');
             test(); // Recalcular posición del indicador
+
+            // Ejecutar código específico para la página de invitaciones sin afectar otras páginas
+            if (pageUrl === 'invitaciones.html') {
+                if (typeof initInvitationsPage === 'function') {
+                    initInvitationsPage();
+                } else {
+                    console.warn('initInvitationsPage no está definida.');
+                }
+            }
         }, Math.max(0, minTime - elapsedTime));
     });
 }
+
+
 
 $(document).ready(function () {
     setTimeout(test, 100);
