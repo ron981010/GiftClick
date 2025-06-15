@@ -9,14 +9,13 @@ function initInvitationsPage() {
 
     invitaciones = [
         // Bodas
-        { titulo: "Estilo<br>Periódico", imagen: "assets/phone1.png", precio: "S/. 80", demo: "https://giftclick.github.io/flower/", categoria: "bodas" },
-        { titulo: "Estilo<br>Sobre", imagen: "assets/phone2.png", precio: "S/. 80", demo: "https://giftclick.github.io/newspaper/index.html", categoria: "bodas" },
-        { titulo: "Pearlas<br>Rosadas", imagen: "assets/pearls.png", precio: "S/. 100", demo: "https://giftclick.github.io/pearls/sobre", categoria: "bodas" },
-        { titulo: "Estilo<br>Libro", imagen: "assets/card.png", precio: "S/. 80", demo: "https://giftclick.github.io/cards", categoria: "bodas" },
         { titulo: "Sobre<br>verde", imagen: "assets/verde.png", precio: "S/. 110", demo: "https://giftclick-david-y-grecia.netlify.app/index.html?Grecia%20y-Acompa%C3%B1ante-2-", categoria: "bodas" },
         { titulo: "Flores<br>Celestes", imagen: "assets/bodaceleste.png", precio: "S/. 110", demo: "https://giftclick.github.io/jherifer-selene/sobre", categoria: "bodas" },
-        { titulo: "Flores<br>beige", imagen: "assets/phone1.png", precio: "S/. 100", demo: "https://gifclick-elvis-jackelyn.netlify.app/sobre.html?Invitado-y%20Acompa%C3%B1ante-2-", categoria: "bodas" },
-
+        { titulo: "Flores<br>beige", imagen: "assets/brown.png", precio: "S/. 100", demo: "https://gifclick-elvis-jackelyn.netlify.app/sobre.html?Invitado-y%20Acompa%C3%B1ante-2-", categoria: "bodas" },
+        { titulo: "Pearlas<br>Rosadas", imagen: "assets/pearls.png", precio: "S/. 100", demo: "https://giftclick.github.io/pearls/sobre", categoria: "bodas" },
+        { titulo: "Estilo<br>Periódico", imagen: "assets/phone1.png", precio: "S/. 80", demo: "https://giftclick.github.io/flower/", categoria: "bodas" },
+        { titulo: "Estilo<br>Sobre", imagen: "assets/phone2.png", precio: "S/. 80", demo: "https://giftclick.github.io/newspaper/index.html", categoria: "bodas" },
+        { titulo: "Estilo<br>Libro", imagen: "assets/card.png", precio: "S/. 80", demo: "https://giftclick.github.io/cards", categoria: "bodas" },
         // XV
         { titulo: "Princesa y<br>el sapo", imagen: "assets/xv.png", precio: "S/. 80", demo: "https://giftclick.github.io/frog/", categoria: "xv" },
         { titulo: "Rapunzel<br>XV", imagen: "assets/rapunzel.png", precio: "S/. 80", demo: "https://mikaela-xv.netlify.app/", categoria: "xv" },
