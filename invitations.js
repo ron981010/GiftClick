@@ -90,8 +90,10 @@ function mostrarDetalle(inv) {
     document.getElementById("detalle-precio").innerText = inv.precio;
 
     const btnWhatsapp = document.getElementById("btn-whatsapp");
-    const mensaje = encodeURIComponent(`Hola, estoy interesado en la invitación "${inv.titulo}" con precio ${inv.precio}. ¿Podrían darme más información?`);
-    btnWhatsapp.href = `https://wa.me/1234567890?text=${mensaje}`;
+    // Reemplazar <br> por espacio en el título para el mensaje
+    const tituloSinBr = inv.titulo.replace(/<br\s*\/?>/gi, " ");
+    const mensaje = encodeURIComponent(`Hola, estoy interesado en la invitación "${tituloSinBr}" con precio ${inv.precio}. ¿Podrían darme más información?`);
+    btnWhatsapp.href = `https://wa.me/+51967707229?text=${mensaje}`;
 
     const btnDemo = document.getElementById("btn-demo");
     btnDemo.href = inv.demo;

@@ -1,3 +1,14 @@
+(function () {
+    const pathname = window.location.pathname;
+    const hash = window.location.hash;
+
+    // Si estás en la raíz o en "/" con hash, redirige a index.html#invitaciones
+    if ((pathname === "/" || pathname === "/index") && (!hash || hash === "#index")) {
+        window.location.replace("/index.html#index");
+    }
+})();
+
+
 function test() {
     const activeItem = $('#navbarSupportedContent').find('.active');
     if (activeItem.length) {
@@ -35,7 +46,7 @@ function loadPage(page) {
 
     // Asegurarnos de que el main-content tenga position: relative
     $('#main-content').css('position', 'relative');
-    
+
     // Crear el loader si no existe
     if ($('#content-loader').length === 0) {
         $('#main-content').append(`
@@ -70,19 +81,19 @@ function loadPage(page) {
             </style>
         `);
     }
-    
+
     // Mostrar el loader
     $('#content-loader').show();
     const startTime = new Date().getTime();
-    
+
     // Cargar contenido
-    $('#main-content').load(pageUrl + ' #main-content > *', function(response, status) {
+    $('#main-content').load(pageUrl + ' #main-content > *', function (response, status) {
         if (status === 'error') {
             console.error('Error al cargar la página:', pageUrl);
             $('#content-loader').hide();
             return;
         }
-        
+
         // Volver a añadir el loader si fue eliminado
         if ($('#content-loader').length === 0) {
             $('#main-content').append(`
@@ -119,15 +130,15 @@ function loadPage(page) {
                 </style>
             `);
         }
-        
+
         // Mostrar el loader por al menos 2 segundos
         const currentTime = new Date().getTime();
         const elapsedTime = currentTime - startTime;
         const minTime = 2000; // 2 segundos
-        
-        setTimeout(function() {
+
+        setTimeout(function () {
             $('#content-loader').fadeOut(300);
-            
+
             // IMPORTANTE: Actualizar la navegación
             $('.nav-item').removeClass('active');
             $('.nav-link[href="#' + page + '"]').parent().addClass('active');
@@ -162,10 +173,24 @@ $(document).ready(function () {
     // Navegación con hash - ESTA ES LA PARTE CRÍTICA
     $('.nav-link').on('click', function (e) {
         e.preventDefault();
-        const href = $(this).attr('href').replace('#', '');
-        window.location.hash = href;
-    });
 
+        let href = $(this).attr('href');
+
+        if (href.startsWith('#')) {
+            const hash = href.replace('#', '');
+
+            // Safari a veces ignora el hash si no estás en index.html, forzamos redirección limpia
+            if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html')) {
+                window.location.hash = hash;
+            } else {
+                window.location.href = '/index.html#' + hash;
+            }
+        } else {
+            // Si es un link normal, lo tratamos como carga parcial
+            const page = href.replace('.html', '');
+            window.location.hash = page;
+        }
+    });
     // Cambios de hash (navegación + botón atrás)
     $(window).on('hashchange', function () {
         const page = window.location.hash.replace('#', '') || 'index';
