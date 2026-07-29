@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vista previa de una invitación digital de GiftClick.">
+  <meta name="theme-color" content="#f6f8ff">
+  <title>Demo | GiftClick</title>
+  <link rel="icon" type="image/jpeg" href="assets/logosintexto.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body class="demoPage">
+  <header class="demoBar">
+    <div class="demoBarInner">
+      <div class="demoHeading">
+        <img class="demoLogo" src="assets/logosintexto.jpg" alt="">
+        <div class="demoCopy">
+          <span class="demoKicker">Vista previa GiftClick</span>
+          <h1 id="demo-title">Cargando plantilla…</h1>
+          <p id="demo-meta">Explora el diseño antes de comprarlo.</p>
+        </div>
+      </div>
+
+      <div class="demoControls">
+        <div class="viewSwitch" role="group" aria-label="Cambiar vista de la demostración">
+          <button id="view-desktop" class="viewButton" type="button" aria-pressed="false">Vista PC</button>
+          <button id="view-mobile" class="viewButton is-active" type="button" aria-pressed="true">Vista móvil</button>
+        </div>
+
+        <div class="demoActions">
+          <a id="back-button" class="backButton" href="index.html#catalogo">Volver</a>
+          <a id="buy-button" class="buyButton" href="#" target="_blank" rel="noopener">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="demoMain">
+    <section id="demo-viewport" class="demoViewport is-mobile" aria-label="Vista previa de la plantilla">
+      <div id="demo-loading" class="demoLoading" role="status">
+        <span class="loadingMark" aria-hidden="true"></span>
+        <strong>Preparando la demo…</strong>
+      </div>
+
+      <iframe
+        id="demo-frame"
+        class="demoFrame"
+        title="Demo de invitación GiftClick"
+        loading="eager"
+        referrerpolicy="no-referrer"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+
+      <div id="demo-error" class="demoError" hidden>
+        <img src="assets/logosintexto.jpg" alt="">
+        <h2>No encontramos esta plantilla</h2>
+        <p>Vuelve al catálogo para elegir otro diseño.</p>
+        <a href="index.html#catalogo">Volver al catálogo</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="catalog.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
