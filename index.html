@@ -3,135 +3,221 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Catálogo de invitaciones digitales personalizadas de GiftClick.">
-  <meta name="theme-color" content="#6e4cfa">
+  <meta name="description" content="Catálogo de invitaciones digitales premium para bodas, cumpleaños, baby showers y XV años. Compra tu diseño por WhatsApp.">
+  <meta name="theme-color" content="#5d3de8">
+  <meta property="og:title" content="GiftClick | Invitaciones digitales">
+  <meta property="og:description" content="Explora invitaciones digitales, abre una demo y compra tu diseño por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ron981010.github.io/GiftClick/">
+  <meta property="og:image" content="https://ron981010.github.io/GiftClick/assets/envelope1.png">
   <title>GiftClick | Invitaciones digitales</title>
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/jpeg" href="assets/logosintexto.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar__inner">
+  <header class="topBar">
+    <div class="topBarInner">
       <a class="brand" href="#inicio" aria-label="GiftClick, inicio">
-        <span class="brand__mark" aria-hidden="true">✦</span>
-        <span>GiftClick</span>
+        <img class="brandIcon" src="assets/logosintexto.jpg" alt="">
+        <span class="brandName">GiftClick</span>
       </a>
       <nav class="nav" aria-label="Navegación principal">
-        <a href="#catalogo">Catálogo</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a class="nav__cta" href="#contacto">Contáctanos</a>
+        <a class="navLink" href="#servicios">Servicios</a>
+        <a class="navLink" href="#proceso">Proceso</a>
+        <a class="navCta whatsapp-general" href="#contacto" target="_blank" rel="noopener">Contáctanos</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section id="inicio" class="hero">
-      <div class="hero__inner">
-        <div class="hero__copy">
-          <span class="eyebrow eyebrow--light">Invitaciones digitales personalizadas</span>
-          <h1>Tu celebración<br>merece algo único.</h1>
-          <p>Diseños listos para enamorar, personalizados para tu momento y fáciles de compartir por WhatsApp.</p>
-          <div class="hero__actions">
-            <a class="button button--light" href="#catalogo">Ver catálogo</a>
-            <a class="button button--outline" href="https://wa.me/51967707229?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20invitaciones%20digitales%20de%20GiftClick." target="_blank" rel="noopener">Hablar por WhatsApp</a>
+  <main id="inicio">
+    <section class="hero">
+      <div class="heroInner">
+        <div class="heroContent">
+          <span class="heroBadge">Invitaciones digitales premium</span>
+          <h1 class="heroTitle">Celebra con<br>estilo digital.</h1>
+          <p class="heroSub">Elige una invitación web única para bodas, cumpleaños, baby showers y XV años. Personalizamos cada detalle y recibes un enlace listo para compartir por WhatsApp.</p>
+          <div class="heroCta">
+            <a class="ctaPrimary" href="#catalogo">Ver catálogo</a>
+            <a class="ctaGhost whatsapp-general" href="#contacto" target="_blank" rel="noopener">Hablar por WhatsApp</a>
           </div>
         </div>
-        <div class="hero__art" aria-hidden="true">
-          <div class="hero__orb hero__orb--cyan"></div>
-          <div class="hero__orb hero__orb--coral"></div>
-          <div class="hero__phone">
-            <img src="assets/catalog/flores-celestes.jpg" alt="">
+        <div class="heroArt" aria-hidden="true">
+          <div class="artCard">
+            <img class="artImg" src="assets/envelope1.png" alt="">
           </div>
-          <span class="hero__note hero__note--one">Hecho para celebrar ✨</span>
-          <span class="hero__note hero__note--two">100% digital</span>
+          <div class="artAccent1"></div>
+          <div class="artAccent2"></div>
         </div>
       </div>
     </section>
 
-    <section id="catalogo" class="catalog section">
-      <div class="container">
-        <div class="section-heading">
+    <section class="services" id="servicios">
+      <div class="sectionWrap">
+        <div class="servicesHeader">
           <div>
-            <span class="eyebrow">Nuestros diseños</span>
-            <h2>Invitaciones para cada momento</h2>
+            <span class="sectionBadge">Nuestros servicios</span>
+            <h2 class="sectionTitle">Invitaciones para cada momento</h2>
           </div>
-          <p>Explora modelos reales, abre sus demos y consulta el diseño que más te guste. Nosotros nos encargamos de personalizarlo para ti.</p>
+          <p>Explora modelos reales, abre cualquier demo y pulsa <strong>Comprar</strong> para escribirnos por WhatsApp. El mensaje incluirá el nombre del diseño que elegiste.</p>
         </div>
 
-        <div class="category-tabs" role="tablist" aria-label="Categorías de invitaciones">
-          <button class="category-tab is-active" type="button" data-category="wedding" role="tab" aria-selected="true">Bodas <strong>5</strong></button>
-          <button class="category-tab" type="button" data-category="birthday" role="tab" aria-selected="false">Cumpleaños y más <strong>4</strong></button>
-          <button class="category-tab" type="button" data-category="babyshower" role="tab" aria-selected="false">Baby Shower <strong>1</strong></button>
-          <button class="category-tab" type="button" data-category="quince" role="tab" aria-selected="false">XV años <strong>6</strong></button>
-        </div>
-
-        <div class="catalog__header" aria-live="polite">
-          <div>
-            <h3 id="category-title">Bodas</h3>
-            <p id="category-summary">Diseños elegantes, románticos y editoriales.</p>
+        <div class="publicTemplates" id="catalogo">
+          <div class="desktopTemplateExperience">
+            <div class="templateCategoryTabs" role="tablist" aria-label="Categorías de plantillas">
+              <button class="categoryTab categoryTabActive" type="button" data-category="wedding" role="tab" aria-selected="true"><span>Bodas</span><strong>5</strong></button>
+              <button class="categoryTab" type="button" data-category="birthday" role="tab" aria-selected="false"><span>Cumpleaños y más</span><strong>4</strong></button>
+              <button class="categoryTab" type="button" data-category="babyshower" role="tab" aria-selected="false"><span>Baby Shower</span><strong>1</strong></button>
+              <button class="categoryTab" type="button" data-category="quince" role="tab" aria-selected="false"><span>XV años</span><strong>6</strong></button>
+            </div>
+            <div class="templateCategoryHeader" aria-live="polite">
+              <div>
+                <h3 id="desktop-category-title">Bodas</h3>
+                <p id="desktop-category-summary">Diseños elegantes, románticos y editoriales.</p>
+              </div>
+              <span id="desktop-category-count">5 modelos disponibles</span>
+            </div>
+            <div id="desktop-template-grid" class="publicTemplateGrid"></div>
           </div>
-          <span id="category-count">5 modelos disponibles</span>
+
+          <div class="mobileTemplateExperience">
+            <section id="mobile-event-picker" class="mobileEventPicker" aria-labelledby="mobile-event-question">
+              <span class="mobileEventEyebrow">Encuentra tu estilo</span>
+              <h3 id="mobile-event-question">¿Para qué evento es tu invitación?</h3>
+              <p>Elige una ocasión y te mostraremos diseños pensados para ese momento.</p>
+              <div class="mobileEventChoices">
+                <button class="mobileEventChoice" style="--event-accent:#6e4cfa" type="button" data-mobile-category="wedding">
+                  <span class="mobileEventIcon" aria-hidden="true">💍</span>
+                  <span class="mobileEventChoiceCopy"><strong>Bodas</strong><small>5 modelos</small></span>
+                  <span class="mobileEventArrow" aria-hidden="true">→</span>
+                </button>
+                <button class="mobileEventChoice" style="--event-accent:#ff7864" type="button" data-mobile-category="birthday">
+                  <span class="mobileEventIcon" aria-hidden="true">🎂</span>
+                  <span class="mobileEventChoiceCopy"><strong>Cumpleaños y más</strong><small>4 modelos</small></span>
+                  <span class="mobileEventArrow" aria-hidden="true">→</span>
+                </button>
+                <button class="mobileEventChoice" style="--event-accent:#13cbb5" type="button" data-mobile-category="babyshower">
+                  <span class="mobileEventIcon" aria-hidden="true">🍼</span>
+                  <span class="mobileEventChoiceCopy"><strong>Baby Shower</strong><small>1 modelo</small></span>
+                  <span class="mobileEventArrow" aria-hidden="true">→</span>
+                </button>
+                <button class="mobileEventChoice" style="--event-accent:#d768b1" type="button" data-mobile-category="quince">
+                  <span class="mobileEventIcon" aria-hidden="true">👑</span>
+                  <span class="mobileEventChoiceCopy"><strong>XV años</strong><small>6 modelos</small></span>
+                  <span class="mobileEventArrow" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </section>
+
+            <section id="mobile-template-results" class="mobileTemplateResults" aria-live="polite" hidden>
+              <div class="mobileTemplateResultsHeader">
+                <span id="mobile-category-icon" aria-hidden="true">💍</span>
+                <div>
+                  <p>Plantillas para</p>
+                  <h3 id="mobile-category-title">Bodas</h3>
+                </div>
+              </div>
+              <p id="mobile-category-intro" class="mobileTemplateResultsIntro">Descubre 5 modelos disponibles.</p>
+              <div id="mobile-template-grid" class="publicTemplateGrid"></div>
+              <button id="mobile-change-event" class="mobileChangeEvent" type="button"><span aria-hidden="true">←</span> Escoger otro tipo de evento</button>
+            </section>
+          </div>
         </div>
-        <div id="template-grid" class="template-grid"></div>
+
+        <div class="mosaicGrid" aria-label="Tipos de invitación disponibles">
+          <button class="tile tileViolet" type="button" data-service-category="wedding">
+            <span class="tilePattern"></span>
+            <span class="tileBody"><strong class="tileLabel">Bodas</strong><span class="tileDesc">Diseños elegantes y personalizados para anunciar tu gran día de manera única.</span><span class="tileArrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="tile tileCoral" type="button" data-service-category="babyshower">
+            <span class="tilePattern"></span>
+            <span class="tileBody"><strong class="tileLabel">Baby Shower</strong><span class="tileDesc">Comparte la alegría de la llegada de tu bebé con invitaciones tiernas y creativas.</span><span class="tileArrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="tile tileTeal" type="button" data-service-category="birthday">
+            <span class="tilePattern"></span>
+            <span class="tileBody"><strong class="tileLabel">Cumpleaños y más</strong><span class="tileDesc">Estilos vibrantes y sobrios para cumpleaños, homenajes y celebraciones especiales.</span><span class="tileArrow" aria-hidden="true">→</span></span>
+          </button>
+          <a class="tile tileDark whatsapp-general" href="#contacto" target="_blank" rel="noopener">
+            <span class="tilePattern"></span>
+            <span class="tileBody"><strong class="tileLabel">Eventos</strong><span class="tileDesc">Conferencias, graduaciones y más con tu identidad visual.</span><span class="tileArrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="benefits section">
-      <div class="container">
-        <span class="eyebrow">La experiencia GiftClick</span>
-        <h2>Bonitas, prácticas y pensadas para compartir</h2>
-        <div class="benefit-grid">
-          <article class="benefit-card">
-            <span class="benefit-card__icon benefit-card__icon--violet">✎</span>
-            <h3>Personalizadas para ti</h3>
-            <p>Adaptamos nombres, fecha, ubicación, fotos y cada detalle de tu celebración.</p>
+    <section class="features">
+      <div class="sectionWrap">
+        <span class="sectionBadge">Ventajas</span>
+        <h2 class="sectionTitle">¿Por qué GiftClick?</h2>
+        <div class="featureGrid">
+          <article class="featureCard">
+            <div class="fIcon fIconV" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            </div>
+            <h3>Personalización total</h3>
+            <p>Adaptamos nombres, fecha, ubicación, fotos, colores y cada detalle importante de tu celebración.</p>
           </article>
-          <article class="benefit-card">
-            <span class="benefit-card__icon benefit-card__icon--teal">♧</span>
-            <h3>Fáciles de compartir</h3>
-            <p>Recibe un enlace listo para enviar a tus invitados por WhatsApp y redes sociales.</p>
+          <article class="featureCard">
+            <div class="fIcon fIconT" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3>100 % ecológico</h3>
+            <p>Sin papel, sin desperdicio. Comparte tu invitación por WhatsApp o mediante un enlace directo.</p>
           </article>
-          <article class="benefit-card">
-            <span class="benefit-card__icon benefit-card__icon--coral">♡</span>
-            <h3>Una opción ecológica</h3>
-            <p>Celebraciones memorables sin papel ni impresiones. Todo ocurre en un solo enlace.</p>
+          <article class="featureCard">
+            <div class="fIcon fIconC" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3>Fácil de compartir</h3>
+            <p>Recibe una invitación web lista para enviar a familiares y amigos por WhatsApp o redes sociales.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="como-funciona" class="process section">
-      <div class="container">
-        <span class="eyebrow">Simple y personalizado</span>
-        <h2>Así creamos tu invitación</h2>
-        <ol class="steps">
-          <li><span>01</span><h3>Elige tu modelo</h3><p>Descubre las opciones del catálogo y abre las demos.</p></li>
-          <li><span>02</span><h3>Cuéntanos tu idea</h3><p>Escríbenos los datos de tu evento y los detalles que quieres incluir.</p></li>
-          <li><span>03</span><h3>Personalizamos</h3><p>Preparamos tu invitación con tu información y estilo.</p></li>
-          <li><span>04</span><h3>Comparte y celebra</h3><p>Recibes tu enlace listo para enviar a todos tus invitados.</p></li>
-        </ol>
+    <section class="process" id="proceso">
+      <div class="sectionWrap">
+        <span class="sectionBadge">Cómo funciona</span>
+        <h2 class="sectionTitle">De la idea a tu invitación</h2>
+        <div class="steps">
+          <article class="step"><span class="stepNum">01</span><h3 class="stepLabel">Elige tu diseño</h3><p>Explora el catálogo y abre las demos para encontrar tu estilo.</p></article>
+          <span class="stepLine" aria-hidden="true"></span>
+          <article class="step"><span class="stepNum">02</span><h3 class="stepLabel">Escríbenos</h3><p>Pulsa Comprar y cuéntanos por WhatsApp los datos de tu evento.</p></article>
+          <span class="stepLine" aria-hidden="true"></span>
+          <article class="step"><span class="stepNum">03</span><h3 class="stepLabel">Personalizamos</h3><p>Preparamos la invitación con tu información, fotografías y detalles.</p></article>
+          <span class="stepLine" aria-hidden="true"></span>
+          <article class="step"><span class="stepNum">04</span><h3 class="stepLabel">Comparte</h3><p>Recibes un enlace listo para enviar a todos tus invitados.</p></article>
+        </div>
       </div>
     </section>
 
-    <section id="contacto" class="contact-banner">
-      <div class="contact-banner__inner">
-        <span class="eyebrow eyebrow--light">Tu evento empieza aquí</span>
-        <h2>¿Encontraste un diseño que te gustó?</h2>
-        <p>Escríbenos por WhatsApp y empecemos a crear tu invitación.</p>
-        <a class="button button--dark" href="https://wa.me/51967707229?text=Hola%2C%20quiero%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20GiftClick." target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    <section class="ctaBanner" id="contacto">
+      <div class="ctaBannerInner">
+        <h2>¿Listo para elegir tu invitación?</h2>
+        <p>Escríbenos por WhatsApp y empecemos a crearla.</p>
+        <a class="ctaWhite whatsapp-general" href="#contacto" target="_blank" rel="noopener">Comprar por WhatsApp</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <a class="brand" href="#inicio"><span class="brand__mark" aria-hidden="true">✦</span><span>GiftClick</span></a>
-      <p>Diseño digital para celebraciones memorables.</p>
-      <div class="footer__links">
-        <a href="https://www.facebook.com/giftclickbo" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/giftclick_bo/" target="_blank" rel="noopener">Instagram</a>
+    <div class="footerInner">
+      <div class="footerTop">
+        <a class="footerBrand" href="#inicio" aria-label="GiftClick, volver al inicio">
+          <img class="footerLogo" src="assets/logo-negativo-negro.jpg" alt="">
+          <span class="footerName">GiftClick</span>
+        </a>
+        <p class="footerTagline">Diseño digital para celebraciones memorables.</p>
       </div>
-      <small>© <span id="year"></span> GiftClick. Todos los derechos reservados.</small>
+      <div class="footerBottom">
+        <div class="footerLinks">
+          <a href="https://www.facebook.com/giftclickbo" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/giftclick_bo/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <p class="footerCopy">© <span id="year"></span> GiftClick. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 
