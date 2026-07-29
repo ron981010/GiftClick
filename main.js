@@ -1,203 +1,82 @@
-(function () {
-    const pathname = window.location.pathname;
-    const hash = window.location.hash;
+const WHATSAPP_NUMBER = "51967707229";
 
-    // Si estás en la raíz o en "/" con hash, redirige a index.html#invitaciones
-    if ((pathname === "/" || pathname === "/index") && (!hash || hash === "#index")) {
-        window.location.replace("/index.html#index");
-    }
-})();
+const categories = {
+  wedding: { title: "Bodas", summary: "Diseños elegantes, románticos y editoriales." },
+  birthday: { title: "Cumpleaños y más", summary: "Plantillas para cumpleaños, celebraciones familiares y momentos de honra." },
+  babyshower: { title: "Baby Shower", summary: "Invitaciones tiernas para anunciar una llegada especial." },
+  quince: { title: "XV años", summary: "Modelos de quinceañera con estética de cuento y celebración." }
+};
 
+const templates = [
+  { id: "flores-celestes", name: "Flores Celestes", category: "wedding", color: "#6e4cfa", description: "Estilo romántico floral con portada sobre.", badges: ["Sobre", "Pases"], demo: "https://giftclick.github.io/jherifer-selene/sobre" },
+  { id: "sobre-verde", name: "Sobre Verde", category: "wedding", color: "#6e4cfa", description: "Boda verde con un elegante flujo de sobre.", badges: ["Sobre", "Pases"], demo: "https://giftclick-david-y-grecia.netlify.app/index.html" },
+  { id: "estilo-libro", name: "Estilo Libro", category: "wedding", color: "#6e4cfa", description: "Diseño editorial tipo álbum para una boda elegante.", badges: ["Álbum"], demo: "https://giftclick.github.io/cards" },
+  { id: "periodico", name: "Periódico Vintage", category: "wedding", color: "#6e4cfa", description: "Un tema periódico con un aire clásico y especial.", badges: ["Pases", "Álbum"], demo: "https://giftclick.github.io/newspaper/index.html" },
+  { id: "perlas-boda", name: "Perlas Boda", category: "wedding", color: "#6e4cfa", description: "Boda clásica de perlas con un toque delicado.", badges: ["Sobre", "Pases"], demo: "https://giftclick.github.io/pearls/sobre" },
+  { id: "pink-bday", name: "Pink Birthday", category: "birthday", color: "#ff7864", description: "Cumpleaños rosa con una portada fresca y alegre.", badges: ["Pases"], demo: "https://giftclick.github.io/carmen" },
+  { id: "pliplin-zafari", name: "Plinplin Zafari", category: "birthday", color: "#ff7864", description: "Tema safari infantil con una experiencia animada.", badges: ["Pases"], demo: "https://giftclick-emiliano.netlify.app/" },
+  { id: "paw-and-plinplin", name: "Paw and Plinplin", category: "birthday", color: "#ff7864", description: "Una invitación infantil animada y divertida.", badges: ["Pases"], demo: "https://giftclick-enzo-issac.netlify.app/" },
+  { id: "misa-de-honra", name: "Misa de Honra", category: "birthday", color: "#6e4cfa", description: "Diseño sobrio para homenajes y momentos especiales.", badges: ["Álbum"], demo: "https://giftclick.github.io/misa/" },
+  { id: "babyshower-men", name: "Baby Shower Men", category: "babyshower", color: "#13cbb5", description: "Tema infantil animado para anunciar una llegada especial.", badges: ["Pases"], demo: "https://giftclick.github.io/ezio/" },
+  { id: "xv-labellaylabestia", name: "XV Bella y Bestia", category: "quince", color: "#00dbf7", description: "Una quinceañera inspirada en un cuento clásico.", badges: ["Pases"], demo: "https://giftclick.github.io/ariana" },
+  { id: "xv-rapunzel", name: "XV Rapunzel", category: "quince", color: "#00dbf7", description: "Un diseño de fantasía con estilo Rapunzel.", badges: ["Pases"], demo: "https://mikaela-xv.netlify.app/" },
+  { id: "xv-frogandprincess", name: "XV Frog and Princess", category: "quince", color: "#00dbf7", description: "Quinceañera temática con inspiración de cuento.", badges: ["Pases"], demo: "https://giftclick.github.io/frog/" },
+  { id: "xv-moon", name: "XV Moon", category: "quince", color: "#00dbf7", description: "Una noche de estrellas para una celebración inolvidable.", badges: ["Pases"], demo: "https://giftclick.github.io/dalia" },
+  { id: "flores-amarillas", name: "Flores Amarillas", category: "quince", color: "#00dbf7", description: "Quinceañera floral, cálida y llena de color.", badges: ["Pases"], demo: "https://giftclick.github.io/estrella" },
+  { id: "xv-blue-pink", name: "XV Blue Pink", category: "quince", color: "#00dbf7", description: "Una propuesta azul y rosa para tus XV años.", badges: ["Pases"], demo: "https://giftclick.github.io/esperanza/index.html" }
+];
 
-function test() {
-    const activeItem = $('#navbarSupportedContent').find('.active');
-    if (activeItem.length) {
-        const height = activeItem.innerHeight();
-        const width = activeItem.innerWidth();
-        const pos = activeItem.position();
+const grid = document.querySelector("#template-grid");
+const categoryTitle = document.querySelector("#category-title");
+const categorySummary = document.querySelector("#category-summary");
+const categoryCount = document.querySelector("#category-count");
+const categoryTabs = document.querySelectorAll(".category-tab");
 
-        $(".hori-selector").css({
-            top: pos.top + "px",
-            left: pos.left + "px",
-            height: height + "px",
-            width: width + "px"
-        });
-    }
-
-    // Recalcular al hacer clic (limpiamos el evento primero)
-    $("#navbarSupportedContent").off("click", "li").on("click", "li", function () {
-        $('#navbarSupportedContent ul li').removeClass("active");
-        $(this).addClass('active');
-        const height = $(this).innerHeight();
-        const width = $(this).innerWidth();
-        const pos = $(this).position();
-        $(".hori-selector").css({
-            top: pos.top + "px",
-            left: pos.left + "px",
-            height: height + "px",
-            width: width + "px"
-        });
-    });
+function whatsappLink(templateName) {
+  const text = `Hola, quiero comprar la plantilla "${templateName}" del catálogo de GiftClick.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
-function loadPage(page) {
-    const pageUrl = page.endsWith('.html') ? page : page + '.html';
-    console.log('Cargando página:', pageUrl);
+function renderTemplates(category) {
+  const selected = templates.filter((template) => template.category === category);
+  const meta = categories[category];
 
-    // Asegurarnos de que el main-content tenga position: relative
-    $('#main-content').css('position', 'relative');
+  categoryTitle.textContent = meta.title;
+  categorySummary.textContent = meta.summary;
+  categoryCount.textContent = `${selected.length} ${selected.length === 1 ? "modelo disponible" : "modelos disponibles"}`;
 
-    // Crear el loader si no existe
-    if ($('#content-loader').length === 0) {
-        $('#main-content').append(`
-            <div id="content-loader" class="content-loader">
-                <div class="spinner"></div>
-            </div>
-            <style>
-                .content-loader {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: white;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 9999;
-                }
-                .spinner {
-                    width: 50px;
-                    height: 50px;
-                    border: 5px solid #f3f3f3;
-                    border-top: 5px solid #3498db;
-                    border-radius: 50%;
-                    animation: spin 1s linear infinite;
-                }
-                @keyframes spin {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
-            </style>
-        `);
-    }
-
-    // Mostrar el loader
-    $('#content-loader').show();
-    const startTime = new Date().getTime();
-
-    // Cargar contenido
-    $('#main-content').load(pageUrl + ' #main-content > *', function (response, status) {
-        if (status === 'error') {
-            console.error('Error al cargar la página:', pageUrl);
-            $('#content-loader').hide();
-            return;
-        }
-
-        // Volver a añadir el loader si fue eliminado
-        if ($('#content-loader').length === 0) {
-            $('#main-content').append(`
-                <div id="content-loader" class="content-loader" style="display: block;">
-                    <div class="spinner"></div>
-                </div>
-                <style>
-                    .content-loader {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: white;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        z-index: 9999;
-                    }
-                    .spinner {
-                        width: 50px;
-                        height: 50px;
-                        margin: auto;
-                        margin-top: 20%;
-                        border: 5px solid #f3f3f3;
-                        border-top: 5px solid #3498db;
-                        border-radius: 50%;
-                        animation: spin 1s linear infinite;
-                    }
-                    @keyframes spin {
-                        0% { transform: rotate(0deg); }
-                        100% { transform: rotate(360deg); }
-                    }
-                </style>
-            `);
-        }
-
-        // Mostrar el loader por al menos 2 segundos
-        const currentTime = new Date().getTime();
-        const elapsedTime = currentTime - startTime;
-        const minTime = 2000; // 2 segundos
-
-        setTimeout(function () {
-            $('#content-loader').fadeOut(300);
-
-            // IMPORTANTE: Actualizar la navegación
-            $('.nav-item').removeClass('active');
-            $('.nav-link[href="#' + page + '"]').parent().addClass('active');
-            test(); // Recalcular posición del indicador
-
-            // Ejecutar código específico para la página de invitaciones sin afectar otras páginas
-            if (pageUrl === 'invitaciones.html') {
-                if (typeof initInvitationsPage === 'function') {
-                    initInvitationsPage();
-                } else {
-                    console.warn('initInvitationsPage no está definida.');
-                }
-            }
-        }, Math.max(0, minTime - elapsedTime));
-    });
+  grid.innerHTML = selected.map((template) => `
+    <article class="template-card" style="--template-accent: ${template.color}">
+      <div class="template-card__preview">
+        <div class="phone-frame">
+          <img src="assets/catalog/${template.id}.jpg" alt="Vista previa de la invitación ${template.name}" loading="lazy">
+        </div>
+        <span>Vista móvil</span>
+      </div>
+      <div class="template-card__body">
+        <h4>${template.name}</h4>
+        <p>${template.description}</p>
+        <div class="template-card__meta">${template.badges.map((badge) => `<span>${badge}</span>`).join("")}</div>
+      </div>
+      <div class="template-card__actions">
+        <a class="button button--demo" href="${template.demo}" target="_blank" rel="noopener">Ver demo</a>
+        <a class="button button--consult" href="${whatsappLink(template.name)}" target="_blank" rel="noopener">Comprar</a>
+      </div>
+    </article>
+  `).join("");
 }
 
-
-
-$(document).ready(function () {
-    setTimeout(test, 100);
-
-    $(".navbar-toggler").click(function () {
-        $(".navbar-collapse").slideToggle(300);
-        setTimeout(test, 300);
+categoryTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const category = tab.dataset.category;
+    categoryTabs.forEach((item) => {
+      const active = item === tab;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-selected", String(active));
     });
-
-    $(window).on('resize', function () {
-        setTimeout(test, 500);
-    });
-
-    // Navegación con hash - ESTA ES LA PARTE CRÍTICA
-    $('.nav-link').on('click', function (e) {
-        e.preventDefault();
-
-        let href = $(this).attr('href');
-
-        if (href.startsWith('#')) {
-            const hash = href.replace('#', '');
-
-            // Safari a veces ignora el hash si no estás en index.html, forzamos redirección limpia
-            if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html')) {
-                window.location.hash = hash;
-            } else {
-                window.location.href = '/index.html#' + hash;
-            }
-        } else {
-            // Si es un link normal, lo tratamos como carga parcial
-            const page = href.replace('.html', '');
-            window.location.hash = page;
-        }
-    });
-    // Cambios de hash (navegación + botón atrás)
-    $(window).on('hashchange', function () {
-        const page = window.location.hash.replace('#', '') || 'index';
-        loadPage(page);
-    });
-
-    // Carga inicial
-    const initialPage = window.location.hash.replace('#', '') || 'index';
-    loadPage(initialPage);
+    renderTemplates(category);
+  });
 });
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+renderTemplates("wedding");
