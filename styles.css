@@ -163,6 +163,7 @@ button {
   left: 0;
   height: 140px;
   content: "";
+  pointer-events: none;
   background: linear-gradient(to top, var(--brand-paper), transparent);
 }
 
