@@ -373,7 +373,7 @@ button {
 
 .templateCategoryTabs {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
   padding: 8px;
   border: 1px solid rgba(110, 76, 250, 0.08);
@@ -428,6 +428,96 @@ button {
 .categoryTabActive strong {
   color: #fff;
   background: rgba(255, 255, 255, 0.18);
+}
+
+.desktopBirthdayGroups {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 120, 100, 0.16);
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(255, 120, 100, 0.08), rgba(255, 255, 255, 0.92));
+}
+
+.desktopBirthdayGroups[hidden],
+.mobileBirthdayPicker[hidden],
+.mobileTemplateResults[hidden],
+.mobileEventPicker[hidden],
+.mobileChangeEvent[hidden] {
+  display: none !important;
+}
+
+.birthdayGroupIntro span {
+  color: #c54f3d;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.birthdayGroupIntro p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.birthdayGroupTabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.birthdayGroupTab {
+  min-height: 54px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 120, 100, 0.14);
+  border-radius: 12px;
+  color: #6f5b64;
+  background: rgba(255, 255, 255, 0.76);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.birthdayGroupTab:hover {
+  border-color: rgba(255, 120, 100, 0.36);
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.birthdayGroupTab strong {
+  min-width: 25px;
+  min-height: 25px;
+  display: grid;
+  place-items: center;
+  padding: 0 6px;
+  border-radius: 100px;
+  color: #c54f3d;
+  background: rgba(255, 120, 100, 0.1);
+  font-size: 11px;
+}
+
+.birthdayGroupTabActive {
+  border-color: rgba(255, 120, 100, 0.48);
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand-coral), #ef6e94);
+  box-shadow: 0 10px 24px rgba(222, 91, 92, 0.18);
+}
+
+.birthdayGroupTabActive strong {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .templateCategoryHeader {
@@ -692,8 +782,15 @@ button {
 .tileCoral .tilePattern { background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(0, 219, 247, 0.3) 20px, rgba(0, 219, 247, 0.3) 34px); }
 .tileTeal { background: var(--brand-teal); }
 .tileTeal .tilePattern { background: radial-gradient(circle 5px, rgba(35, 31, 28, 0.18) 100%, transparent 100%); background-position: 16px 16px; background-size: 32px 32px; }
+.tileMemorial { background: linear-gradient(145deg, #7a7591, #555169); }
+.tileMemorial .tilePattern { background: radial-gradient(circle at 22% 26%, rgba(255, 255, 255, 0.16) 0 2px, transparent 3px), linear-gradient(125deg, transparent 0 42%, rgba(255, 255, 255, 0.06) 43% 44%, transparent 45%); background-size: 46px 46px, 100% 100%; }
 .tileDark { background: var(--brand-ink); }
 .tileDark .tilePattern { background: repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(255, 255, 255, 0.04) 8px, rgba(255, 255, 255, 0.04) 10px); }
+
+.mosaicGrid > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  min-height: 240px;
+}
 
 .tileBody {
   position: relative;
@@ -975,7 +1072,9 @@ button {
 
 @media (max-width: 768px) {
   .mosaicGrid { grid-template-columns: 1fr; }
+  .mosaicGrid > :last-child:nth-child(odd) { grid-column: auto; min-height: 300px; }
   .templateCategoryTabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .desktopBirthdayGroups { grid-template-columns: 1fr; }
   .templateCategoryHeader { align-items: flex-start; flex-direction: column; }
   .featureGrid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .steps { flex-direction: column; align-items: center; gap: 24px; }
@@ -996,6 +1095,116 @@ button {
     background: radial-gradient(circle at 100% 0%, rgba(0, 219, 247, 0.22), transparent 34%), linear-gradient(145deg, #fff, #f4f0ff);
     box-shadow: 0 18px 48px rgba(54, 41, 110, 0.11);
     scroll-margin-top: 92px;
+  }
+
+  .mobileBirthdayPicker {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 18px 18px;
+    border: 1px solid rgba(255, 120, 100, 0.18);
+    border-radius: 24px;
+    background: radial-gradient(circle at 100% 0%, rgba(255, 120, 100, 0.2), transparent 35%), linear-gradient(145deg, #fff, #fff4f1);
+    box-shadow: 0 18px 48px rgba(109, 52, 60, 0.1);
+    scroll-margin-top: 92px;
+  }
+
+  .mobileBirthdayPicker .mobileEventEyebrow {
+    color: #bd4d3b;
+    background: rgba(255, 120, 100, 0.12);
+  }
+
+  .mobileBirthdayPicker h3 {
+    max-width: 11ch;
+    margin: 13px 0 8px;
+    color: var(--brand-ink);
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .mobileBirthdayPicker > p {
+    max-width: 32ch;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.55;
+  }
+
+  .mobilePickerBack {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: -5px 0 16px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 10px;
+    color: #8a6170;
+    background: rgba(255, 255, 255, 0.72);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .mobileBirthdayChoices {
+    display: grid;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .mobileBirthdayChoice {
+    min-height: 84px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid rgba(255, 120, 100, 0.2);
+    border-radius: 16px;
+    color: var(--brand-ink);
+    background: rgba(255, 255, 255, 0.86);
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .mobileBirthdayChoice:active { transform: scale(0.985); }
+
+  .mobileBirthdayChoiceIcon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(255, 120, 100, 0.1);
+    font-size: 22px;
+  }
+
+  .mobileBirthdayChoice > span:nth-child(2) {
+    display: grid;
+    gap: 4px;
+  }
+
+  .mobileBirthdayChoice strong {
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .mobileBirthdayChoice small {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .mobileBirthdayChoiceCount {
+    padding: 6px 8px;
+    border-radius: 100px;
+    color: #bd4d3b;
+    background: rgba(255, 120, 100, 0.1);
+    font-size: 10px;
+    font-weight: 900;
+    white-space: nowrap;
   }
 
   .mobileEventPicker::after {
@@ -1074,6 +1283,11 @@ button {
   }
 
   .mobileEventChoice:active { transform: scale(0.98); }
+
+  .mobileEventChoice:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    min-height: 116px;
+  }
 
   .mobileEventIcon {
     width: 40px;
@@ -1159,7 +1373,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: 9px;
-    margin-top: 12px;
+    margin-top: 0;
     border: 1.5px solid rgba(110, 76, 250, 0.2);
     border-radius: 13px;
     color: var(--brand-violet);
@@ -1167,6 +1381,18 @@ button {
     cursor: pointer;
     font-size: 13px;
     font-weight: 900;
+  }
+
+  .mobileResultActions {
+    display: grid;
+    gap: 9px;
+    margin-top: 12px;
+  }
+
+  .mobileChangeEventSecondary {
+    border-color: rgba(89, 82, 108, 0.14);
+    color: #696178;
+    background: rgba(255, 255, 255, 0.72);
   }
 }
 
@@ -1199,6 +1425,7 @@ button {
   .features, .process { padding: 72px 0; }
   .mosaicGrid { gap: 12px; margin-top: 32px; }
   .tile { min-height: 210px; border-radius: 16px; }
+  .mosaicGrid > :last-child:nth-child(odd) { min-height: 210px; }
   .tileBody { padding: 24px; }
   .tileLabel { font-size: 24px; }
   .publicTemplatePreview { min-height: 232px; }
@@ -1213,6 +1440,8 @@ button {
   .navCta { padding-inline: 9px; }
   .mobileEventChoices { grid-template-columns: 1fr; }
   .mobileEventChoice { min-height: 116px; }
+  .mobileBirthdayChoice { grid-template-columns: auto minmax(0, 1fr); }
+  .mobileBirthdayChoiceCount { grid-column: 2; justify-self: start; }
   .publicTemplateActions { grid-template-columns: 1fr; }
 }
 

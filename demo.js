@@ -48,7 +48,13 @@ if (!template) {
   error.hidden = false;
 } else {
   const category = categories[template.category];
-  const backUrl = `index.html?category=${encodeURIComponent(template.category)}#catalogo`;
+  const backParams = new URLSearchParams({ category: template.category });
+
+  if (template.birthdayGroup) {
+    backParams.set("birthdayGroup", template.birthdayGroup);
+  }
+
+  const backUrl = `index.html?${backParams.toString()}#catalogo`;
 
   title.textContent = template.name;
   meta.textContent = `${category.title} · Explora el diseño antes de comprarlo.`;

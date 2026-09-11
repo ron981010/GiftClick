@@ -1,0 +1,261 @@
+PROMPT MAESTRO — REORGANIZAR Y AMPLIAR EL CATÁLOGO DE CUMPLEAÑOS Y HOMENAJES DE GIFTCLICK
+
+Actúa como desarrollador/a web senior, diseñador/a UX móvil y curador/a de catálogo para GiftClick. Trabaja directamente sobre el proyecto existente, conserva su identidad visual y lleva la tarea hasta una versión verificada y publicada.
+
+CONTEXTO DEL PROYECTO
+
+- Carpeta local: /Users/ron/Documents/GitHub/GiftClick
+- Repositorio: https://github.com/ron981010/GiftClick
+- Catálogo publicado: https://ron981010.github.io/GiftClick/
+- Rama de publicación actual: main, mediante GitHub Pages.
+- Archivos principales: catalog.js, main.js, index.html, styles.css, demo.html y demo.js.
+- Las miniaturas del catálogo están en assets/catalog/ y deben conservar el formato vertical de 390 x 760 píxeles.
+- El catálogo actual tiene una sola categoría llamada “Cumpleaños y más”. Debe conservarse como categoría principal, dividirse internamente en tres subcategorías claras y sacar de allí Misa de Honra para crear una categoría principal independiente llamada “Homenajes”.
+
+OBJETIVO PRINCIPAL
+
+Reorganiza la sección “Cumpleaños y más” en estas tres subcategorías:
+
+1. Cumpleaños infantiles · 1 a 5 años
+2. Cumpleaños · 7 a 13 años
+3. Cumpleaños general
+
+La navegación debe seguir siendo limpia, rápida y muy fácil de entender desde un celular. No conviertas estas tres opciones en más categorías principales que saturen la pantalla: deben funcionar como un segundo nivel dentro de “Cumpleaños y más”.
+
+Además, crea “Homenajes” como una nueva categoría principal del catálogo. Esta sección debe tener una identidad visual sobria, respetuosa y diferenciada de los cumpleaños, sin quedar escondida dentro de otra categoría.
+
+CLASIFICACIÓN OBLIGATORIA DE LAS INVITACIONES ACTUALES
+
+Cumpleaños infantiles · 1 a 5 años:
+
+- Pink Birthday — id actual: pink-bday
+- Plinplin Zafari — id actual: pliplin-zafari
+- Paw and Plinplin — id actual: paw-and-plinplin
+- Plim Plim Rosado — id actual: plim-plim-rosado-vivo
+- Plim Plim Rosado Pastel — id actual: plim-plim-rosado-pastel
+
+Cumpleaños · 7 a 13 años:
+
+- Slappy / Escalofríos — id actual: slappy-escalofrios
+
+Cumpleaños general:
+
+- Cumpleaños 50 Tigre — id actual: cumpleanos-50-tigre. Ya existe en catalog.js; no lo dupliques, solo reclasifícalo.
+- Cumpleaños 50 Hugo — debe agregarse al catálogo.
+
+DATOS VERIFICADOS DE LA INVITACIÓN DE HUGO
+
+- Repositorio principal: https://github.com/giftclick/hugo-50
+- Publicación principal: https://giftclick.github.io/hugo-50/
+- Título de la invitación publicada: “Mario Hugo - 50 años”.
+- También existen los repositorios giftclick/hugo-50-red y giftclick/hugo-50-green. Son variantes de color del mismo diseño. Usa hugo-50 como entrada principal y no publiques las tres como tarjetas distintas, salvo que una revisión visual demuestre que son productos suficientemente diferentes y exista una razón comercial clara para mostrarlas por separado.
+- Crea una miniatura real de la publicación principal, no una imagen genérica. Debe medir exactamente 390 x 760 píxeles, verse bien como portada de tarjeta y guardarse en assets/catalog/ con un nombre coherente, por ejemplo cumpleanos-50-hugo.jpg.
+- Antes de agregarla, confirma que la URL responde correctamente y que la invitación carga completa.
+
+NUEVA SECCIÓN PRINCIPAL: HOMENAJES
+
+- Crea una categoría principal con un identificador estable como tribute, memorial o homenaje. Prefiere tribute para mantener el patrón técnico en inglés de wedding, birthday y quince, pero muestra siempre “Homenajes” al usuario.
+- Usa un icono sobrio y reconocible, por ejemplo una paloma o una vela, sin que la presentación resulte lúgubre.
+- Resumen sugerido: “Invitaciones respetuosas para misas, aniversarios y celebraciones de vida.”
+- Mueve la tarjeta misa-de-honra desde category: "birthday" a la nueva categoría de Homenajes.
+- Conserva su enlace, descripción, miniatura y funciones actuales salvo que encuentres un error real.
+- Misa de Honra es actualmente el único modelo de esta sección.
+- La meta es llegar a un mínimo de cinco homenajes reales y publicados; por lo tanto, deben planificarse cuatro modelos adicionales.
+- Las nuevas propuestas deben cubrir necesidades distintas y no ser simples cambios de color de la misma misa.
+
+MODELO DE DATOS RECOMENDADO
+
+Mantén category: "birthday" como categoría principal y agrega a cada plantilla de cumpleaños una propiedad de subcategoría. Usa identificadores estables como:
+
+- birthday-1-5
+- birthday-7-13
+- birthday-general
+
+Puedes llamar a la propiedad birthdayGroup, subcategory o un nombre equivalente, pero debe ser consistente en todo el proyecto. Evita duplicar objetos o mantener dos fuentes de verdad.
+
+Para Homenajes usa una categoría principal independiente, por ejemplo category: "tribute". No necesita subcategorías mientras tenga pocos modelos. Diseña los datos de forma que se puedan añadir subcategorías en el futuro sin tener que rehacer la navegación.
+
+Los nombres, resúmenes, iconos, contadores y filtros deben salir de los datos siempre que sea razonable. Reduce los conteos escritos manualmente en index.html para evitar que vuelvan a quedar desactualizados al agregar invitaciones.
+
+EXPERIENCIA DE USUARIO REQUERIDA
+
+En escritorio:
+
+- Conserva las categorías principales actuales y agrega “Homenajes” como una opción principal visible.
+- Al seleccionar “Cumpleaños y más”, muestra debajo un selector secundario discreto con las tres subcategorías.
+- Presenta el nombre de la subcategoría, una descripción corta y el número real de modelos disponibles.
+- Mantén el estilo visual existente del catálogo y evita que las cinco categorías principales se amontonen. Si no caben cómodamente, permite un ajuste ordenado en dos filas o utiliza un selector accesible que no oculte categorías.
+
+En celular:
+
+- El selector inicial debe incluir Bodas, Cumpleaños y más, Homenajes, Baby Shower y XV años de forma clara y sin desplazamiento horizontal obligatorio.
+- Primer paso: el usuario toca “Cumpleaños y más”.
+- Segundo paso: aparece una pantalla o bloque limpio con tres botones grandes y claros: “1 a 5 años”, “7 a 13 años” y “General”.
+- Tercer paso: se muestran únicamente las invitaciones de la opción elegida.
+- Incluye una acción visible para “Cambiar tipo de cumpleaños” y otra para volver a escoger el tipo de evento.
+- Si el usuario toca “Homenajes”, debe entrar directamente a sus tarjetas, sin mostrar un segundo selector innecesario.
+- Evita carruseles difíciles de descubrir, menús desplegables pequeños y desplazamiento horizontal.
+- Los botones táctiles deben tener un área cómoda de al menos 44 x 44 píxeles.
+- No dependas de hover. Mantén foco visible, etiquetas accesibles y estados seleccionados comprensibles.
+- Conserva la compra por WhatsApp y la vista previa de cada invitación.
+- Mantén la selección cuando sea útil mediante parámetros de URL, de modo que regresar desde una demo lleve nuevamente a la subcategoría correcta.
+
+META DE CRECIMIENTO DEL CATÁLOGO
+
+El objetivo comercial es tener un mínimo de cinco invitaciones reales, completas y publicadas en cada subcategoría de cumpleaños y también cinco modelos en Homenajes. No rellenes el catálogo público con tarjetas ficticias, enlaces rotos, “próximamente” ni diseños que todavía no existan.
+
+Inventario inicial después de esta reorganización:
+
+- 1 a 5 años: 5 invitaciones. La meta mínima ya está cubierta.
+- 7 a 13 años: 1 invitación, Slappy. Faltan 4 invitaciones reales.
+- General: 2 invitaciones reales de cumpleaños, Hugo y Tigre. Faltan 3 invitaciones reales.
+- Homenajes: 1 invitación, Misa de Honra. Faltan 4 invitaciones reales.
+
+Además de modificar el catálogo, crea dentro del proyecto un archivo llamado PLAN_CATALOGO_CUMPLEANOS_Y_HOMENAJES.md con un plan concreto para producir las invitaciones faltantes. El plan debe incluir, por cada nueva invitación:
+
+- Categoría y subcategoría, cuando corresponda.
+- Nombre provisional comercial.
+- Edad o público objetivo.
+- Concepto visual.
+- Paleta y estilo tipográfico.
+- Secciones o interacciones principales.
+- Elementos que la diferencian de las plantillas actuales.
+- Recursos necesarios.
+- Prioridad y orden recomendado de producción.
+- Estado: idea, diseño, desarrollo, revisión, publicada.
+- Campo para repositorio, URL publicada y miniatura cuando estén disponibles.
+
+INVESTIGACIÓN DE TENDENCIAS
+
+Antes de cerrar el plan, investiga qué estilos de cumpleaños están en tendencia en el momento de ejecución. Usa fuentes actuales y observación visual reciente; no des por vigentes tendencias antiguas solo por memoria.
+
+Para la categoría de 7 a 13 años incluye obligatoriamente una dirección inspirada en la energía de Roblox: universo de bloques, avatares originales, retos, obbies y estética gamer. Debe ser inspiración visual, no una copia. No uses logotipos, personajes, tipografías oficiales ni recursos protegidos sin licencia.
+
+Como líneas de exploración, valida cuáles tienen demanda actual antes de aprobarlas:
+
+- Aventura gamer de bloques y retos, inspirada en experiencias tipo Roblox pero con identidad original.
+- Mundo pixelado de construcción y exploración, con arte propio.
+- Fútbol o experiencia “match day”.
+- E-sports, neón y sala gamer.
+- Pop, baile o fiesta musical moderna.
+- Ciencia ficción, espacio, skate, cómic o aventura, según lo que muestre la investigación.
+
+Para cumpleaños general explora opciones que no repitan a Hugo ni a Tigre, por ejemplo:
+
+- Editorial minimalista para 30, 40, 50 o 60 años.
+- Fiesta disco moderna o estética cromada.
+- Noche elegante en negro y dorado.
+- Tropical contemporáneo o atardecer.
+- Parrilla, cerveza artesanal, cócteles o temática deportiva adulta.
+
+Para Homenajes planifica cuatro modelos nuevos y claramente distintos de Misa de Honra. Como punto de partida, desarrolla estas direcciones y adáptalas después de investigar referencias actuales:
+
+- Luz Eterna: homenaje minimalista marfil y dorado, con fotografía principal, fecha, ubicación, mensaje familiar y confirmación.
+- Jardín del Recuerdo: composición floral serena, tonos suaves y galería de recuerdos.
+- Celebración de una Vida: estilo editorial o biográfico con línea de tiempo, fotografías y mensajes de familiares.
+- Fe y Esperanza: propuesta religiosa sobria para rosario, novenario, aniversario o misa conmemorativa, adaptable a distintas tradiciones.
+
+En Homenajes cuida especialmente el tono: lenguaje respetuoso, tipografía muy legible, animaciones discretas, música opcional y controles fáciles de silenciar. Evita textos festivos, ilustraciones infantiles o llamadas comerciales invasivas dentro de la invitación.
+
+Estas son direcciones candidatas, no una autorización para copiar marcas o personajes. Prioriza diseños originales que GiftClick pueda vender y reutilizar con seguridad. Una simple variación de color no debe contarse como una nueva invitación si la experiencia y la composición son esencialmente iguales.
+
+ALCANCE DE ESTA EJECUCIÓN
+
+Debes completar ahora:
+
+1. Auditar el estado del repositorio y preservar cualquier cambio del usuario.
+2. Implementar las tres subcategorías de cumpleaños sin romper Bodas, Baby Shower ni XV años.
+3. Crear la categoría principal Homenajes y mover allí Misa de Honra.
+4. Reclasificar todas las invitaciones indicadas.
+5. Agregar Hugo con enlace y miniatura reales.
+6. Mantener Tigre en General y Slappy en 7 a 13 años.
+7. Crear PLAN_CATALOGO_CUMPLEANOS_Y_HOMENAJES.md con suficientes propuestas para alcanzar un mínimo de cinco invitaciones reales por subcategoría de cumpleaños y cinco en Homenajes.
+8. Incluir exactamente cuatro propuestas adicionales de Homenajes, además de las propuestas faltantes para 7 a 13 años y General.
+9. No agregar al catálogo público las propuestas que todavía no estén construidas y publicadas.
+10. Verificar la experiencia en escritorio y en celular.
+11. Publicar la actualización únicamente después de que las verificaciones pasen.
+
+Si encuentras otras invitaciones ya terminadas en tareas recientes, repositorios de GitHub o proyectos de Vercel de GiftClick, puedes usarlas para reducir el faltante, pero solo después de comprobar visualmente su temática, edad objetivo, enlace público y miniatura. No inventes URLs ni deduzcas la edad solo por el nombre del repositorio.
+
+VERIFICACIONES OBLIGATORIAS
+
+- Revisa que todos los identificadores sean únicos.
+- Comprueba que cada tarjeta tenga una miniatura existente de 390 x 760 píxeles.
+- Confirma que todas las demos publicadas respondan y carguen la invitación correcta.
+- Confirma que los contadores coincidan con el número real de tarjetas.
+- Verifica que Hugo aparezca en Cumpleaños general.
+- Verifica que Tigre aparezca en Cumpleaños general una sola vez.
+- Verifica que Slappy sea la única invitación actual de 7 a 13 años, hasta que existan nuevas publicaciones reales.
+- Verifica que las cinco invitaciones infantiles queden en 1 a 5 años.
+- Verifica que exista la categoría principal Homenajes con contador correcto.
+- Verifica que Misa de Honra aparezca una sola vez, dentro de Homenajes, y nunca dentro de cumpleaños.
+- Verifica que el plan contenga cuatro propuestas adicionales para llegar a cinco modelos de Homenajes.
+- Prueba anchos móviles de 360, 390 y 430 píxeles, además de escritorio.
+- No debe existir desplazamiento horizontal, texto cortado, botones superpuestos ni tarjetas imposibles de abrir.
+- Prueba el flujo completo: categoría principal → subcategoría → tarjeta → demo → regreso → compra por WhatsApp.
+- Ejecuta las comprobaciones sintácticas y de formato disponibles en el proyecto.
+- Revisa el diff final y asegúrate de no mezclar archivos ajenos o cambios no relacionados.
+
+PUBLICACIÓN
+
+- Confirma primero que la rama local esté alineada con origin/main.
+- Crea un commit claro y publica en origin/main, porque GitHub Pages se genera desde esa rama.
+- Espera a que GitHub Pages indique estado “built”.
+- Verifica la versión pública, no solo la copia local.
+- Deja el repositorio limpio y sincronizado después de publicar.
+
+ENTREGA FINAL
+
+Al finalizar, informa de forma breve y no técnica:
+
+- Qué subcategorías se crearon.
+- Que se creó la sección Homenajes y que Misa de Honra fue trasladada allí.
+- Dónde quedó cada invitación existente.
+- Que Hugo fue agregado y qué enlace se utilizó.
+- Cuántas invitaciones reales tiene cada subcategoría y cuántos modelos tiene Homenajes.
+- Cuántas faltan para llegar a cinco y dónde quedó el plan de producción.
+- Enlace del catálogo publicado.
+- Resultado de las pruebas móviles y de los enlaces.
+- Commit publicado.
+
+CRITERIO DE TERMINADO
+
+La tarea solo está terminada cuando la división de cumpleaños es clara en celular y escritorio, Homenajes existe como categoría principal, Misa de Honra está correctamente ubicada, Hugo aparece correctamente, las demás invitaciones están bien clasificadas, los enlaces y miniaturas funcionan, el plan para llegar a cinco modelos por subcategoría y cinco Homenajes está documentado, la versión pública está actualizada y el repositorio queda limpio.
+
+IDEAS CLAVE PARA INNOVAR EN LOS MODELOS DE BODAS Y XV AÑOS
+
+No te limites a cambiar colores o fotografías. La innovación debe combinar una identidad visual diferente, una experiencia narrativa y al menos una función útil para el invitado. Antes de convertir una idea en producto, compara el catálogo actual, investiga referencias recientes y evita repetir composiciones ya existentes.
+
+Bodas:
+
+- Historia cinematográfica: recorrido vertical por capítulos — cómo se conocieron, propuesta, familias, ceremonia y celebración — con transiciones discretas y carga rápida.
+- Revista de pareja: portada editorial, entrevistas breves, cronología, galería y datos del evento con una composición diferente al Periódico Vintage.
+- Destino de boda: itinerario de varios días, mapa, transporte, hospedaje, clima orientativo, recomendaciones y versión bilingüe.
+- Identidad cultural contemporánea: reinterpretar elementos andinos, bolivianos, peruanos, amazónicos o regionales con ilustración original y acabado elegante, sin caer en clichés.
+- Audio de bienvenida: mensaje corto grabado por la pareja, subtítulos y control visible para reproducir o silenciar.
+- Invitación personalizada por familia: nombre del invitado, número de pases, restricciones, mesa o grupo y confirmación sencilla, cuidando la privacidad.
+- Álbum vivo: fotografías organizadas como película analógica, polaroids, archivo documental o galería editorial, sin repetir el modelo Libro.
+- Estéticas a explorar: lujo silencioso, botánica escultórica, monocromo editorial, película vintage, color blocking elegante, noche estrellada y arquitectura minimalista.
+- Funciones de valor: cuenta regresiva, calendario, mapa, código de vestimenta visual, lista de regalos, preguntas frecuentes, RSVP y mensajes posteriores al evento.
+
+XV años:
+
+- Invitación por capítulos: niñez, sueños, familia y celebración, con un relato breve que haga sentir el modelo personalizado.
+- Portal interactivo original: una puerta, espejo, libro, constelación o escenario que se abre para revelar la invitación, sin copiar universos de Disney u otras marcas.
+- Experiencia musical: presentación sincronizada con una canción elegida, visualizador sutil y controles accesibles; nunca reproducir sonido sin una opción clara para detenerlo.
+- Estéticas a explorar: celestial y aurora, jardín nocturno, fantasía botánica, editorial de moda, pop urbano, neón futurista, cromado Y2K refinado, baile de máscaras y cuento latinoamericano original.
+- Participación de invitados: mensajes para la quinceañera, galería colaborativa moderada, votación de canciones o muro de buenos deseos.
+- Guía del evento: cronograma, dress code con paleta visual, ubicación, transporte, recomendaciones y botones de calendario.
+- Recuerdo digital: sección posterior al evento para publicar fotografías, video resumen y agradecimiento sin cambiar el enlace original.
+- Variantes inclusivas: diseños elegantes, modernos, deportivos, artísticos y urbanos; no asumir que todas las quinceañeras desean una estética de princesa.
+- Personalización premium: monograma, ilustración original, portada animada, frase central y paleta extraída del vestido o la decoración real.
+
+Principios de innovación para ambas categorías:
+
+- Cada nuevo modelo debe tener una silueta visual reconocible aun cuando se vea como una miniatura pequeña.
+- Diseña primero para celular y optimiza imágenes, animaciones, video y audio para conexiones móviles.
+- Mantén el contenido principal visible aunque falle una animación o un recurso externo.
+- Usa recursos originales o con licencia y evita depender de personajes, logotipos o música protegida.
+- Crea componentes reutilizables sin hacer que todos los modelos parezcan la misma plantilla con otra paleta.
+- Valida cada idea con una ficha que explique público, problema que resuelve, diferenciador, complejidad, tiempo estimado y posibilidad de reutilización comercial.
+- Prioriza una mezcla equilibrada: modelos visualmente impactantes, modelos rápidos de producir y modelos premium con funciones avanzadas.
