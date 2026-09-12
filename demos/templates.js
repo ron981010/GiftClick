@@ -104,6 +104,86 @@
       date: "2027-10-30T17:00:00-04:00", dateLabel: "Sábado 30 de octubre · 17:00", venue: "Salón Orión · La Paz", dress: "Azul noche, crema o dorado",
       storyTitle: "Nuestro pequeño universo", story: "Paola y Sergio quieren contar las estrellas contigo mientras esperan la llegada de su pequeña Luna.",
       schedule: [["17:00", "Bienvenida estelar"], ["17:45", "Órbita de juegos"], ["19:00", "Deseos para Luna"]], tags: ["Celestial", "Deseos", "Cuenta regresiva"], code: "LUNA-STAR"
+    },
+    "boda-opalo": {
+      premium: true, eventType: "wedding", layout: "opal", family: "premium-opal", category: "Bodas", icon: "∞",
+      name: "Boda Ópalo", kicker: "Una luz, dos caminos", title: "Alma & Luca", subtitle: "Celebramos el amor que cambia de color con cada mirada.", signature: "AL",
+      date: "2027-11-20T16:00:00-04:00", dateLabel: "20 · 11 · 2027", venue: "Casa Origen · Valle de La Paz", dress: "Formal en tonos luminosos",
+      image: "../assets/demos/boda-opalo-hero.jpg", storyTitle: "Nuestro sí, a plena luz", story: "Una ceremonia íntima entre reflejos suaves, flores escultóricas y las personas que han dado forma a nuestra historia.",
+      featureTitle: "La experiencia", featureText: "Ceremonia, cena de autor y una pista bajo instalaciones de luz. La invitación acompaña cada momento con información clara.",
+      schedule: [["16:00", "Ceremonia"], ["17:30", "Cóctel opalino"], ["19:00", "Cena y celebración"]], tags: ["RSVP", "Pases", "Mesa de regalos"], code: "ALMA-LUCA"
+    },
+    "boda-speakeasy": {
+      premium: true, eventType: "wedding", layout: "speakeasy", family: "premium-speakeasy", category: "Bodas", icon: "S",
+      name: "Boda Speakeasy", kicker: "Admit two · one night only", title: "Renata / Simón", subtitle: "La contraseña es amor. La noche es nuestra.", signature: "R+S",
+      date: "2027-12-04T20:30:00-04:00", dateLabel: "04 · 12 · 2027", venue: "Salón 1926 · Sopocachi", dress: "Black tie · acento borgoña",
+      image: "../assets/demos/boda-speakeasy-hero.jpg", storyTitle: "Una noche sin guion", story: "Velvet, jazz y una celebración que empieza detrás de una puerta discreta. Ven listo para brindar y bailar hasta tarde.",
+      featureTitle: "La contraseña", featureText: "Tu pase personal revela el acceso y la mesa. Una experiencia nocturna inspirada en hospitalidad, no en una invitación clásica.",
+      schedule: [["20:30", "Puertas secretas"], ["21:30", "Cena & jazz"], ["23:30", "Midnight club"]], tags: ["Pase secreto", "Dress code", "Playlist"], code: "ROJO-1926"
+    },
+    "boda-destino-lago": {
+      premium: true, eventType: "wedding", layout: "travel", family: "premium-travel", category: "Bodas", icon: "⌁",
+      name: "Boda Destino Lago", kicker: "Titicaca · fin de semana", title: "Isabel & Tomás", subtitle: "Dos días, un lago inmenso y nuestra gente favorita.", signature: "IT",
+      date: "2028-01-22T15:30:00-04:00", dateLabel: "21—23 · 01 · 2028", venue: "Isla del Sol · Lago Titicaca", dress: "Elegancia natural · abrigo al atardecer",
+      image: "../assets/demos/boda-destino-lago-hero.jpg", storyTitle: "Un viaje para celebrar", story: "Diseñamos un fin de semana con bienvenida, ceremonia y desayuno de despedida. Aquí encontrarás transporte, hospedaje y horarios.",
+      featureTitle: "Tu guía de viaje", featureText: "La invitación funciona como un concierge móvil: ruta, equipaje sugerido, clima, agenda y contacto de apoyo en un solo lugar.",
+      schedule: [["Viernes", "Bienvenida frente al lago"], ["Sábado", "Ceremonia al atardecer"], ["Domingo", "Desayuno de despedida"]], tags: ["Itinerario", "Hospedaje", "Transporte"], code: "LAGO-IT"
+    },
+    "boda-textil-andino": {
+      premium: true, eventType: "wedding", layout: "textile", family: "premium-textile", category: "Bodas", icon: "◇",
+      name: "Boda Textil Contemporánea", kicker: "Raíz, materia y encuentro", title: "Mayra & Julián", subtitle: "Unimos nuestras historias entre fibras, tierra y luz.", signature: "MJ",
+      date: "2028-02-19T16:30:00-04:00", dateLabel: "19 · 02 · 2028", venue: "Museo de Arte · La Paz", dress: "Formal contemporáneo",
+      image: "../assets/demos/boda-textil-andino-hero.jpg", storyTitle: "Lo que tejemos juntos", story: "Una identidad contemporánea inspirada respetuosamente en la materialidad andina, con formas originales y protagonismo de la pareja.",
+      featureTitle: "Materia viva", featureText: "La navegación se construye como una exposición: manifiesto, ceremonia, piezas de la historia y una guía práctica para invitados.",
+      schedule: [["16:30", "Sala I · Ceremonia"], ["18:00", "Patio · Cóctel"], ["20:00", "Sala II · Cena"]], tags: ["Identidad original", "Galería", "RSVP"], code: "TEJIDO-MJ"
+    },
+    "boda-amor-documental": {
+      premium: true, eventType: "wedding", layout: "documentary", family: "premium-documentary", category: "Bodas", icon: "35",
+      name: "Amor Documental", kicker: "Sin poses · con memoria", title: "Clara + Andrés", subtitle: "Lo nuestro siempre se vio mejor en movimiento.", signature: "C+A",
+      date: "2028-03-11T12:00:00-04:00", dateLabel: "11 · 03 · 2028", venue: "Palacio Portales · Cochabamba", dress: "Cómodo, elegante y tú mismo",
+      image: "../assets/demos/boda-amor-documental-hero.jpg", storyTitle: "Una historia que se siente real", story: "Fotos espontáneas, notas de voz y pequeñas escenas cuentan quiénes somos antes de revelar los datos del gran día.",
+      featureTitle: "Nuestro archivo", featureText: "La composición toma el lenguaje del carrete analógico y el scrapbook, pero mantiene accesibles el mapa, los pases y la confirmación.",
+      schedule: [["12:00", "Sí, quiero"], ["13:00", "Almuerzo largo"], ["16:00", "Baile al sol"]], tags: ["Historia", "Álbum vivo", "Audio opcional"], code: "FRAME-CA"
+    },
+    "xv-editorial-cobalto": {
+      premium: true, eventType: "quince", layout: "runway", family: "premium-cobalt", category: "XV años", icon: "XV",
+      name: "XV Editorial Cobalto", kicker: "The blue issue · 2027", title: "Mariana XV", subtitle: "Quince años. Una voz propia. Una noche en azul.", signature: "M",
+      date: "2027-11-27T19:00:00-04:00", dateLabel: "27 · 11 · 2027", venue: "Galería Uno · Santa Cruz", dress: "Formal · azul reservado para Mariana",
+      image: "../assets/demos/xv-editorial-cobalto-hero.jpg", storyTitle: "Mi primera portada", story: "Una invitación de moda que presenta a Mariana desde su personalidad, sus sueños y su estilo, sin recurrir a un cuento conocido.",
+      featureTitle: "La edición de la noche", featureText: "Portada, carta familiar, sesión editorial, programa y pase VIP se leen como una revista móvil de colección.",
+      schedule: [["19:00", "Red carpet"], ["20:00", "Vals editorial"], ["22:00", "After party"]], tags: ["Portada", "Dress code", "Pase VIP"], code: "BLUE-M15"
+    },
+    "xv-jardin-nocturno": {
+      premium: true, eventType: "quince", layout: "garden", family: "premium-nightgarden", category: "XV años", icon: "✦",
+      name: "XV Jardín Nocturno", kicker: "Florece una nueva historia", title: "Antonia", subtitle: "Cuando caiga la noche, el jardín abrirá sus puertas.", signature: "A15",
+      date: "2028-01-15T18:30:00-04:00", dateLabel: "15 · 01 · 2028", venue: "Invernadero Botánico · La Paz", dress: "Formal · tonos joya",
+      image: "../assets/demos/xv-jardin-nocturno-hero.jpg", storyTitle: "El portal de Antonia", story: "La experiencia atraviesa un jardín cinematográfico y revela recuerdos, deseos y una celebración bajo la luna.",
+      featureTitle: "Capítulos en flor", featureText: "Cada sección florece como un capítulo: familia, sueños, ceremonia, fiesta y mensajes para la quinceañera.",
+      schedule: [["18:30", "Se abre el jardín"], ["20:00", "Ceremonia de luz"], ["21:30", "Baile bajo la luna"]], tags: ["Portal", "Deseos", "Galería"], code: "GARDEN-A15"
+    },
+    "xv-pop-cromo": {
+      premium: true, eventType: "quince", layout: "pop", family: "premium-pop", category: "XV años", icon: "POP",
+      name: "XV Pop Cromo", kicker: "Volume 15 · play", title: "Vale en estéreo", subtitle: "Mi era, mi playlist, mi fiesta.", signature: "V15",
+      date: "2028-02-05T20:00:00-04:00", dateLabel: "05 · 02 · 2028", venue: "Prisma Hall · La Paz", dress: "Silver, lilac & pop",
+      image: "../assets/demos/xv-pop-cromo-hero.jpg", storyTitle: "Press play", story: "Un universo musical cromado que combina portada de álbum, setlist de momentos y energía de pista sin copiar a ningún artista.",
+      featureTitle: "La playlist de Vale", featureText: "El recorrido se comporta como un reproductor visual: intro, favoritos, cuenta regresiva, ubicación, dress code y confirmación.",
+      schedule: [["20:00", "Track 01 · Bienvenida"], ["21:00", "Track 02 · Vals"], ["22:30", "Track 03 · Dance set"]], tags: ["Playlist", "Hashtag", "RSVP"], code: "PLAY-V15"
+    },
+    "xv-opera-roja": {
+      premium: true, eventType: "quince", layout: "opera", family: "premium-opera", category: "XV años", icon: "III",
+      name: "XV Ópera Roja", kicker: "Esta noche en tres actos", title: "Luciana", subtitle: "El telón se abre para una historia que recién comienza.", signature: "LXV",
+      date: "2028-03-25T19:30:00-04:00", dateLabel: "25 · 03 · 2028", venue: "Teatro Municipal · La Paz", dress: "Gala · rojo reservado para Luciana",
+      image: "../assets/demos/xv-opera-roja-hero.jpg", storyTitle: "Acto I · El comienzo", story: "Una celebración teatral narrada en tres actos: familia y gratitud, ceremonia y una gran escena final en la pista.",
+      featureTitle: "El programa", featureText: "La invitación reemplaza el flujo de princesa por un libreto dramático con entradas, actos, reparto familiar y pase de platea.",
+      schedule: [["19:30", "Acto I · Recepción"], ["20:30", "Acto II · Ceremonia"], ["22:00", "Acto III · Celebración"]], tags: ["Programa", "Pase de platea", "Dress code"], code: "PLATEA-LXV"
+    },
+    "xv-raices-modernas": {
+      premium: true, eventType: "quince", layout: "heritage", family: "premium-roots", category: "XV años", icon: "15",
+      name: "XV Raíces Modernas", kicker: "De dónde vengo · hacia dónde voy", title: "Amaya", subtitle: "Quince años para honrar mis raíces y diseñar mi futuro.", signature: "AM",
+      date: "2028-04-22T17:00:00-04:00", dateLabel: "22 · 04 · 2028", venue: "Patio de Piedra · Sucre", dress: "Formal en tonos tierra",
+      image: "../assets/demos/xv-raices-modernas-hero.jpg", storyTitle: "Mi identidad, mi celebración", story: "Una propuesta boliviana contemporánea con texturas originales, flores de altura y un relato personal, sin convertir la cultura en decorado.",
+      featureTitle: "Raíz y futuro", featureText: "La estructura une carta familiar, símbolo personal, galería, ceremonia y muro de deseos para crear un recuerdo digital duradero.",
+      schedule: [["17:00", "Encuentro familiar"], ["18:00", "Ceremonia de gratitud"], ["20:00", "Fiesta y futuro"]], tags: ["Carta familiar", "Muro de deseos", "Galería"], code: "AMAYA-15"
     }
   };
 

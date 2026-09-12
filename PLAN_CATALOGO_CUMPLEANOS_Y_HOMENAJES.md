@@ -1,6 +1,6 @@
 # Plan de crecimiento del catálogo GiftClick
 
-Actualizado: 12 de septiembre de 2026
+Actualizado: 12 de septiembre de 2026 · ampliación de Bodas y XV integrada
 
 ## Objetivo cumplido
 
@@ -10,15 +10,15 @@ Todas las categorías públicas y todos los segmentos de cumpleaños tienen un m
 
 | Sección | Modelos publicados | Meta mínima | Estado |
 |---|---:|---:|---|
-| Bodas | 7 | 5 | Cumple |
+| Bodas | 12 | 5 | Cumple |
 | Cumpleaños infantiles · 1 a 5 años | 5 | 5 | Cumple |
 | Cumpleaños · 7 a 13 años | 5 | 5 | Cumple |
 | Cumpleaños general | 5 | 5 | Cumple |
 | Homenajes | 5 | 5 | Cumple |
 | Baby Shower | 5 | 5 | Cumple |
-| XV años | 6 | 5 | Cumple |
+| XV años | 11 | 5 | Cumple |
 
-El catálogo contiene 38 modelos: 7 de Bodas, 15 de Cumpleaños, 5 de Homenajes, 5 de Baby Shower y 6 de XV años.
+El catálogo contiene 48 modelos: 12 de Bodas, 15 de Cumpleaños, 5 de Homenajes, 5 de Baby Shower y 11 de XV años. La investigación, conceptos y producción de las diez incorporaciones nuevas están documentados en `PLAN_BODAS_XV_2026.md`.
 
 ## Producción completada
 
